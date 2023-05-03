@@ -6,6 +6,8 @@ import {
   Text,
   HorizontalStack,
 } from "@shopify/polaris";
+import { Icon } from "@shopify/polaris";
+import { CaretUpMinor } from "@shopify/polaris-icons";
 import { TitleBar } from "@shopify/app-bridge-react";
 
 export default function PageName() {
@@ -17,6 +19,34 @@ export default function PageName() {
   const actionGroups = [
     { title: "More actions", actions: [{ content: "Baz", url: "/baz" }] },
   ];
+
+  const totalDonation = (
+    <AlphaCard sectioned>
+      <Text variant="headingSm" as="h3" color="subdued">
+        Total donation
+      </Text>
+      <VerticalStack>
+        <Text variant="headingXl" as="p">
+          $2084
+        </Text>
+        <HorizontalStack gap="4" wrap={false} blockAlign="center">
+          <HorizontalStack>
+            <Icon
+              source={CaretUpMinor}
+              color="base"
+              className="--p-font-size-500"
+            />
+            <Text variant="headingSm" as="p" color="subdued">
+              11.2%
+            </Text>
+          </HorizontalStack>
+          <Text variant="bodySm" as="p" color="subdued">
+            so far this month
+          </Text>
+        </HorizontalStack>
+      </VerticalStack>
+    </AlphaCard>
+  );
 
   return (
     <Page fullWidth={true}>
@@ -31,22 +61,8 @@ export default function PageName() {
         </Layout.Section>
         <Layout.Section>
           <HorizontalStack wrap={false} gap="4">
-            <AlphaCard sectioned>
-              <Text variant="headingMd" as="h3">
-                Heading
-              </Text>
-              <VerticalStack>
-                <p>Body</p>
-              </VerticalStack>
-            </AlphaCard>
-            <AlphaCard sectioned>
-              <Text variant="headingMd" as="h3">
-                Heading
-              </Text>
-              <VerticalStack>
-                <p>Body</p>
-              </VerticalStack>
-            </AlphaCard>
+            {totalDonation}
+            {totalDonation}
           </HorizontalStack>
         </Layout.Section>
       </Layout>
