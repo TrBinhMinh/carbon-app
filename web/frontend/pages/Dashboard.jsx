@@ -1,14 +1,12 @@
 import {
-  AlphaCard,
   Page,
   Layout,
-  VerticalStack,
   Text,
   HorizontalStack,
 } from "@shopify/polaris";
-import { Icon } from "@shopify/polaris";
-import { CaretUpMinor } from "@shopify/polaris-icons";
 import { TitleBar } from "@shopify/app-bridge-react";
+import TotalDonation from "../components/Dashboard/TotalDonation";
+import OffsetGoal from "../components/Dashboard/OffsetGoal";
 
 export default function PageName() {
   const primaryAction = { content: "Primary action", url: "/foo" };
@@ -19,34 +17,6 @@ export default function PageName() {
   const actionGroups = [
     { title: "More actions", actions: [{ content: "Baz", url: "/baz" }] },
   ];
-
-  const totalDonation = (
-    <AlphaCard sectioned>
-      <Text variant="headingSm" as="h3" color="subdued">
-        Total donation
-      </Text>
-      <VerticalStack>
-        <Text variant="headingXl" as="p">
-          $2084
-        </Text>
-        <HorizontalStack gap="4" wrap={false} blockAlign="center">
-          <HorizontalStack>
-            <Icon
-              source={CaretUpMinor}
-              color="base"
-              className="--p-font-size-500"
-            />
-            <Text variant="headingSm" as="p" color="subdued">
-              11.2%
-            </Text>
-          </HorizontalStack>
-          <Text variant="bodySm" as="p" color="subdued">
-            so far this month
-          </Text>
-        </HorizontalStack>
-      </VerticalStack>
-    </AlphaCard>
-  );
 
   return (
     <Page fullWidth={true}>
@@ -61,54 +31,13 @@ export default function PageName() {
         </Layout.Section>
         <Layout.Section>
           <HorizontalStack wrap={false} gap="4">
-            {totalDonation}
-            {totalDonation}
+            <TotalDonation />
+            <TotalDonation />
+            <OffsetGoal />
+            <TotalDonation />
           </HorizontalStack>
         </Layout.Section>
       </Layout>
     </Page>
-    // <Page
-    //   pagination={{
-    //     hasPrevious: true,
-    //     hasNext: true,
-    //   }}
-    // >
-    //   <TitleBar
-    //     title="Dashboard"
-    //     primaryAction={primaryAction}
-    //     secondaryActions={secondaryActions}
-    //     actionGroups={actionGroups}
-    //   />
-    //   <Layout>
-    //     <Layout.Section>
-    //       <AlphaCard sectioned>
-    //         <Text variant="headingMd" as="h2">
-    //           Heading
-    //         </Text>
-    //         <VerticalStack>
-    //           <p>Body</p>
-    //         </VerticalStack>
-    //       </AlphaCard>
-    //       <AlphaCard sectioned>
-    //         <Text variant="headingMd" as="h2">
-    //           Heading
-    //         </Text>
-    //         <VerticalStack>
-    //           <p>Body</p>
-    //         </VerticalStack>
-    //       </AlphaCard>
-    //     </Layout.Section>
-    //     <Layout.Section secondary>
-    //       <AlphaCard sectioned>
-    //         <Text variant="headingMd" as="h2">
-    //           Heading
-    //         </Text>
-    //         <VerticalStack>
-    //           <p>Body</p>
-    //         </VerticalStack>
-    //       </AlphaCard>
-    //     </Layout.Section>
-    //   </Layout>
-    // </Page>
   );
 }
