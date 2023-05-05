@@ -7,6 +7,7 @@ import {
 import { TitleBar } from "@shopify/app-bridge-react";
 import TotalDonation from "../components/Dashboard/TotalDonation";
 import OffsetGoal from "../components/Dashboard/OffsetGoal";
+import CallToAction from "../components/Dashboard/CallToAction";
 
 export default function PageName() {
   const primaryAction = { content: "Primary action", url: "/foo" };
@@ -34,7 +35,7 @@ export default function PageName() {
             <TotalDonation />
             <TotalDonation />
             <OffsetGoal />
-            <TotalDonation />
+            <CallToAction />
           </HorizontalStack>
         </Layout.Section>
       </Layout>
