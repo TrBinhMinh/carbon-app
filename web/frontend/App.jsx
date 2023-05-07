@@ -25,7 +25,11 @@ export default function App() {
                   destination: "/Dashboard",
                 },
                 {
-                  label: "Setting",
+                  label: "Estimate Form",
+                  destination: "/EstimateForm",
+                },
+                {
+                  label: "Ranking",
                   destination: "/pagename",
                 },
                 {
