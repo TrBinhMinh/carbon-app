@@ -3,10 +3,8 @@ import {
   Text,
   VerticalStack,
   HorizontalStack,
-  Icon,
   ProgressBar,
 } from "@shopify/polaris";
-import { CaretUpMinor } from "@shopify/polaris-icons";
 
 export default function OffsetGoal(props) {
   return (
@@ -22,6 +20,10 @@ export default function OffsetGoal(props) {
       <div style={{ width: 225 }}>
         <ProgressBar progress={40} size="small" />
       </div>
+      <HorizontalStack align="space-between">
+        <Text variant="bodySm" as="p" color="subdued">3.26kg</Text>
+        <Text variant="bodySm" as="p" color="subdued">1000kg</Text>
+      </HorizontalStack>
     </AlphaCard>
   );
 }
